@@ -50,6 +50,16 @@ jobs:
       - name: Build with VitePress
         run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
         working-directory: docs
+      - name: Debug build output
+        run: |
+          echo "Repo root:"
+          ls
+          echo "docs/:"
+          ls docs
+          echo "docs/.vitepress/:"
+          ls docs/.vitepress || true
+          echo "docs/.vitepress/dist:"
+          ls docs/.vitepress/dist || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
