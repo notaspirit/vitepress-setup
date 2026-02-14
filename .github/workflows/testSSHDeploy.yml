@@ -21,7 +21,7 @@ jobs:
 
       - name: Make changes
         run: |
-          cd repo-b
+          cd VolumetricSelection2077-Playgrond
           echo "Updated at $(date)" >> test.txt
 
       - name: Commit and push
