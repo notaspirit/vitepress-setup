@@ -1,0 +1,34 @@
+name: Push to VS2077TestRepo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VS2077TESTSSHKEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Clone repo B
+        run: |
+          git clone git@github.com:notaspirit-orca/VolumetricSelection2077-Playgrond.git
+
+      - name: Make changes
+        run: |
+          cd repo-b
+          echo "Updated at $(date)" >> test.txt
+
+      - name: Commit and push
+        run: |
+          cd repo-b
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Automated update"
+          git push
