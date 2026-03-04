@@ -6,7 +6,7 @@ export default defineConfig({
   title: "vitepress-setup",
   description: "playground for setting up vitepress",
   head: [
-    ['link', { rel: 'icon', href: '/vitepress-setup/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
