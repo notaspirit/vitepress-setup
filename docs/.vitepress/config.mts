@@ -19,11 +19,18 @@ export default defineConfig({
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
+      },
+      {
+        text: 'Meta Documentation',
+        collapsed: true,
+        items: [
+          { text: 'Getting Started', link: 'meta-docs/getting-started' }
+        ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/Wolvenkit/Wolvenkit' }
     ]
   }
 })
